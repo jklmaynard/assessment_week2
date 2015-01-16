@@ -1,7 +1,9 @@
-<h1>Here are the saved numbers for <%= @contact.name() %></h1>
+<h2>Here are the saved numbers for <%= @contact.name() %></h2>
 
-<ul>
+<ol>
   <% @contact.get_number().each() do |number| %>
   <li><a href="/numbers/<%= number.id() %>"><%= number.number() %></a></li>
   <% end %>
-</ul>
+</ol>
+
+<a href="/">Return to Directory</a>
