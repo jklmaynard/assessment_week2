@@ -2,14 +2,14 @@
 
 <form action="/numbers" method="post">
   <input id='contact_id' name='contact_id' type='hidden' value='<%= @contact.id() %>'
+
   <label for='home'>Home Number</label>
-  <input id='home' name='home' type='text'>
+  <input id='home' name='home' type='text'><br>
 
-  <button type="submit">Add Number</button>
+  <label for='mobile'>Mobile Number</label>
+  <input id='mobile' name='mobile' type='text'><br>
+
+  <label for='work'>Work Number</label>
+  <input id='work' name='work' type='text'>
+  <button type="submit">Add Number</button><br>
 </form>
-
-<ul>
-  <% @contact.get_number().each() do |number| %>
-    <li><a href="/numbers/<%= number.id() %>"><%= number.number() %></a></li>
-    <% end %>
-</ul>

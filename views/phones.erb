@@ -1,0 +1,7 @@
+<h1>Here are the saved numbers for <%= @contact.name() %></h1>
+
+<ul>
+  <% @contact.get_number().each() do |number| %>
+  <li><a href="/numbers/<%= number.id() %>"><%= number.number() %></a></li>
+  <% end %>
+</ul>
