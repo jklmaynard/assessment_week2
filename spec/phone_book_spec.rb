@@ -1,6 +1,7 @@
 require('rspec')
 require('pry')
 require('contact_class')
+require('phone_class')
 
 describe(Contact) do
   before() do
@@ -10,7 +11,7 @@ describe(Contact) do
 
   describe('#add_contact') do
     it("will add a contact into an array of all contacts") do
-      test_contact = Contact.new({:name => "Bob", :number => "234-234-2345"})
+      test_contact = Contact.new({:name => "Bob", :number => []})
       test_contact.add_contact()
       expect(Contact.all()).to(eq([test_contact]))
     end
@@ -47,9 +48,11 @@ describe(Contact) do
 
   describe('#get_number') do
     it("returns the :number when queried") do
-      bob_contact = Contact.new({:name => "Bob", :number => "234-234-2345"})
-      bob_contact.add_contact()
-      expect(bob_contact.get_number()).to(eq("234-234-2345"))
+      bob = Contact.new({:name => "Bob"})
+      bob.add_contact()
+      bob_number = Phone.new({:number => "235-235-2356"})
+      bob.add_number(bob_number)
+      expect(bob.get_number()).to(eq([bob_number]))
     end
   end
 
