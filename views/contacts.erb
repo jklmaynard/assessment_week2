@@ -1,0 +1,15 @@
+<h1>Add a number to <%= @contact.name() %></h1>
+
+<form action="/numbers" method="post">
+  <input id='contact_id' name='contact_id' type='hidden' value='<%= @contact.id() %>'
+  <label for='home'>Home Number</label>
+  <input id='home' name='home' type='text'>
+
+  <button type="submit">Add Number</button>
+</form>
+
+<ul>
+  <% @contact.get_number().each() do |number| %>
+    <li><a href="/numbers/<%= number.id() %>"><%= number.number() %></a></li>
+    <% end %>
+</ul>

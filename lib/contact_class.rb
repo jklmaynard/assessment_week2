@@ -2,8 +2,8 @@ class Contact
   @@phone_book = []
   attr_reader(:name)
 
-  define_method(:initialize) do |attributes|
-    @name = attributes.fetch(:name)
+  define_method(:initialize) do |name|
+    @name = name
     @number = []
     @id = @@phone_book.length().+(1)
   end
@@ -42,8 +42,8 @@ class Contact
     found_contact
   end
 
-  define_method(:add_number) do |numbers|
-    @number.push(numbers)
+  define_method(:add_number) do |number|
+    @number.push(number)
   end
 
 
