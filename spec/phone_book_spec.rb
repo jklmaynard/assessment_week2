@@ -8,7 +8,6 @@ describe(Contact) do
     Contact.clear()
   end
 
-
   describe('#add_contact') do
     it("will add a contact into an array of all contacts") do
       test_contact = Contact.new({:name => "Bob", :number => []})
@@ -55,5 +54,4 @@ describe(Contact) do
       expect(bob.get_number()).to(eq([bob_number]))
     end
   end
-
 end

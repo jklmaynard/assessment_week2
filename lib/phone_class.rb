@@ -1,6 +1,5 @@
 class Phone
   @@all_numbers = []
-
   attr_reader(:number)
 
   define_method(:initialize) do |number|
@@ -25,6 +24,4 @@ class Phone
     end
     found_number
   end
-
-
 end

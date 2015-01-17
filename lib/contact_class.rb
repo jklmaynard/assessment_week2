@@ -45,7 +45,4 @@ class Contact
   define_method(:add_number) do |number|
     @number.push(number)
   end
-
-
-
 end
